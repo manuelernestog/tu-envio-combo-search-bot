@@ -42,9 +42,15 @@ function craw_product_list_page(page, base_url) {
 }
 
 function process_product_response(res) {
-    let product = get_product_info(res);
-    let message = create_message(product, res);
-    bot_module.send_message(message, product);
+    if (valid_response(res)) {
+        let product = get_product_info(res);
+        let message = create_message(product, res);
+        bot_module.send_message(message, product);
+    }
+}
+
+function valid_response(res) {
+    return res.$('.product-title h4').text() == '' ? false : true
 }
 
 function get_product_info(res) {
@@ -54,9 +60,10 @@ function get_product_info(res) {
         store: res.options.store,
         province: res.options.province,
         url: res.options.uri,
-        img: null,
+        img: get_product_img(res),
         products: []
     }
+    console.log(product);
     res.$('.product-tab table tr').each(function (i, elem) {
         const prod = {
             count: $(this).find('td').last().text(),
@@ -66,6 +73,14 @@ function get_product_info(res) {
     })
     product.products.splice(0, 1);
     return product;
+}
+
+function get_product_img(res) {
+    var img = res.$('.fancybox').attr('href')
+    if (img == "https://imagenes.tuenvio.cu/Img_Data/500x500/") {
+        img = null;
+    }
+    return img;
 }
 
 function create_message(product, res) {
