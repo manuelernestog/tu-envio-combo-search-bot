@@ -1,0 +1,23 @@
+{
+  "name": "TuEnvioComboSearBot",
+  "version": "1.0.0",
+  "description": "Bot de rastreo y notificacion para combos en TuEnvio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Telegram-bot",
+    "bot",
+    "TuEnvio"
+  ],
+  "author": "Zuntek",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "crawler": "^1.2.2",
+    "fs": "0.0.1-security",
+    "node-cron": "^2.0.3",
+    "node-telegram-bot-api": "^0.50.0"
+  }
+}
