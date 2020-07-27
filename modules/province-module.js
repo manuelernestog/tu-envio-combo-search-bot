@@ -2,9 +2,8 @@ module.exports = {
     get_chat_id_by_province: function (province) {
         switch (province) {
             case "Habana":
-                return "@zuntekTestChanel";
+                return "@TuEnvioComboAlertHabana";
         }
-
     },
     get_province_btn: function () {
         return buttons = {

@@ -61,7 +61,6 @@ function get_product_info(res) {
         store: res.options.store,
         province: res.options.province,
         url: res.options.uri,
-        img: get_product_img(res),
         products: []
     }
     res.$('.product-tab table tr').each(function (i, elem) {
@@ -73,14 +72,6 @@ function get_product_info(res) {
     })
     product.products.splice(0, 1);
     return product;
-}
-
-function get_product_img(res) {
-    var img = res.$('.fancybox').attr('href')
-    if (img == "https://imagenes.tuenvio.cu/Img_Data/500x500/") {
-        img = "https://imagenes.tuenvio.cu/Img_Data/215x215/no_img.gif";
-    }
-    return img;
 }
 
 function create_message(product, res) {
