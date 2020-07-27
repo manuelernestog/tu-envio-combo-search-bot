@@ -3,6 +3,7 @@ const bot_module = require('../bot-module');
 const product_list_operations = require('../products-list-operations')
 
 exports.process_response = function (res) {
+    console.log('Revisando ' + res.options.store + ' - ' + res.options.page_type)
     if (res.options.page_type == "product_list") {
         process_product_list_response(res);
     } else {
@@ -63,7 +64,6 @@ function get_product_info(res) {
         img: get_product_img(res),
         products: []
     }
-    console.log(product);
     res.$('.product-tab table tr').each(function (i, elem) {
         const prod = {
             count: $(this).find('td').last().text(),
@@ -78,7 +78,7 @@ function get_product_info(res) {
 function get_product_img(res) {
     var img = res.$('.fancybox').attr('href')
     if (img == "https://imagenes.tuenvio.cu/Img_Data/500x500/") {
-        img = null;
+        img = "https://imagenes.tuenvio.cu/Img_Data/215x215/no_img.gif";
     }
     return img;
 }
@@ -94,5 +94,6 @@ function create_message(product, res) {
         message.push(`<b>${item.count}</b> | ${item.name} \n`);
     })
     message.push("-----------------------------------------------\n");
+    message.push("Publicado por @TuEnvioComboSearchBot \u{1F916}");
     return message.join('');
 }

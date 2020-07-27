@@ -22,6 +22,21 @@
     "store_type": "tu_envio",
     "store": "El Pedregal",
     "province": "Habana"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/carlos3/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Carlos III",
+    "province": "Habana"
+  },
+  {
+    "base_url": " https://www.tuenvio.cu/caribehabana/",
+    "url_end": "Products?depPid=46087",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Villa Diana",
+    "province": "Habana"
   }
-
 ]
