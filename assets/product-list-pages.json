@@ -32,11 +32,19 @@
     "province": "Habana"
   },
   {
-    "base_url": " https://www.tuenvio.cu/caribehabana/",
+    "base_url": "https://www.tuenvio.cu/caribehabana/",
     "url_end": "Products?depPid=46087",
     "page_type": "product_list",
     "store_type": "tu_envio",
     "store": "Villa Diana",
     "province": "Habana"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/ciego/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Ciego de Avila",
+    "province": "Ciego"
   }
 ]

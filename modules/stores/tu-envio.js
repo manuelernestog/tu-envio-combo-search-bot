@@ -79,12 +79,11 @@ function create_message(product, res) {
     message.push("\u{1F6CD}" + ` <b>${product.title}</b> \n`);
     message.push("\u{1F4B0}" + ` ${product.price} \n`);
     message.push("\u{1F3EA}" + ` ${product.store} \n`);
-    message.push("\u{1F310}" + ` <a href="${product.url}">Ir al producto</a> \n`);
     message.push("-----------------------------------------------\n");
     product.products.forEach(function (item) {
         message.push(`<b>${item.count}</b> | ${item.name} \n`);
     })
     message.push("-----------------------------------------------\n");
-    message.push("Publicado por @TuEnvioComboSearchBot \u{1F916}");
+    message.push("Publicado por @TuEnvioComboSearchBot");
     return message.join('');
 }

@@ -3,6 +3,8 @@ module.exports = {
         switch (province) {
             case "Habana":
                 return "@TuEnvioComboAlertHabana";
+            case "Ciego":
+                return "@TuEnvioComboAlertCiego";
         }
     },
     get_province_btn: function () {
@@ -11,6 +13,9 @@ module.exports = {
                 inline_keyboard: [
                     [
                         {text: "La Habana", url: 'https://t.me/tuEnvioComboAlertHabana'},
+                    ],
+                    [
+                        {text: "Ciego de Avila", url: 'https://t.me/tuEnvioComboAlertCiego'},
                     ]
                 ]
             }
