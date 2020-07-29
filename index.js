@@ -10,8 +10,8 @@ global.bot = new TelegramBot(botKey, {polling: true});
 global.craw = require('./modules/crawler-module');
 global.activeProductsList = []
 
-Cron.schedule('*/2 * * * *', () => {
-    console.log('Iniciando Nueva Revision');
+Cron.schedule('*/2 6-20 * * *', () => {
+    console.log('Iniciando Nueva Revision' + Date());
     productListPages.forEach(function (page) {
         craw.queue({
             uri: page.base_url + page.url_end,
@@ -25,7 +25,18 @@ Cron.schedule('*/2 * * * *', () => {
     });
 });
 
+bot.onText(/\/start/, (msg) => {
+    bot.sendMessage(msg.chat.id, "Hola, soy TuEnvioComboSearchBot (TECSbot). Selecciona /provincias para obtener el listado de canales disponibles o /ayuda para saber un poco mas de mi.", {
+        "reply_markup": {
+            "keyboard": [["/provincias"], ["/ayuda"]]
+        }
+    });
+});
+
 bot.onText(/\/provincias/, function get_provinces_chanel_list(msg) {
     bot_module.get_provinces_btn(msg);
 });
 
+bot.onText(/\/ayuda/, (msg) => {
+    bot_module.help_message(msg);
+});

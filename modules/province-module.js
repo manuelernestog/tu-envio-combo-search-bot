@@ -11,12 +11,8 @@ module.exports = {
         return buttons = {
             reply_markup: {
                 inline_keyboard: [
-                    [
-                        {text: "La Habana", url: 'https://t.me/tuEnvioComboAlertHabana'},
-                    ],
-                    [
-                        {text: "Ciego de Avila", url: 'https://t.me/tuEnvioComboAlertCiego'},
-                    ]
+                    [{text: "La Habana", url: 'https://t.me/tuEnvioComboAlertHabana'},],
+                    [{text: "Ciego de Avila", url: 'https://t.me/tuEnvioComboAlertCiego'},]
                 ]
             }
         }
