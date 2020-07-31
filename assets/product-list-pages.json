@@ -1,5 +1,13 @@
 [
   {
+    "base_url": "http://127.0.0.1:8080/",
+    "url_end": "Tuenvio%20CarlosIII%20-%20Envios%20Cuba%2C%20Paquetes%20a%20Cuba%20-%20M%C3%93DULOS.html",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Test",
+    "province": "test"
+  },
+  {
     "base_url": "https://www.tuenvio.cu/4caminos/",
     "url_end": "Products?depPid=46095",
     "page_type": "product_list",
@@ -8,13 +16,13 @@
     "province": "habana"
   },
   {
-  "base_url": "https://www.tuenvio.cu/tipicaboyeros/",
-  "url_end": "Products?depPid=46095",
-  "page_type": "product_list",
-  "store_type": "tu_envio",
-  "store": "La Tipica Boyeros",
-  "province": "habana"
-},
+    "base_url": "https://www.tuenvio.cu/tipicaboyeros/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "La Tipica Boyeros",
+    "province": "habana"
+  },
   {
     "base_url": "https://www.tuenvio.cu/tvpedregal/",
     "url_end": "Products?depPid=55",
@@ -48,11 +56,59 @@
     "province": "ciego"
   },
   {
-    "base_url": "http://127.0.0.1:8080/",
-    "url_end": "Tuenvio%20CarlosIII%20-%20Envios%20Cuba%2C%20Paquetes%20a%20Cuba%20-%20M%C3%93DULOS.html",
+    "base_url": "https://www.tuenvio.cu/pinar/",
+    "url_end": "Products?depPid=46095",
     "page_type": "product_list",
     "store_type": "tu_envio",
-    "store": "Test",
-    "province": "test"
+    "store": "Pinar del Rio",
+    "province": "pinar"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/artemisa/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Artemisa",
+    "province": "artemisa"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/mayabeque-tv/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Mayabeque",
+    "province": "mayabeque"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/matanzas/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Matanzas",
+    "province": "matanzas"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/cienfuegos/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Cienfuegos",
+    "province": "cienfuegos"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/villaclara/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Villa Clara",
+    "province": "villaclara"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/sancti/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Sancti Spiritus",
+    "province": "sancti"
   }
 ]

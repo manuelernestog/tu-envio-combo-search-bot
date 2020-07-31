@@ -11,7 +11,7 @@ global.bot = new TelegramBot(botKey, {polling: true});
 global.craw = require('./modules/crawler-module');
 global.activeProductsList = {test: [], habana: [], ciego: []}
 
-Cron.schedule('*/2 6-20 * * *', () => {
+Cron.schedule('*/2 7-20 * * *', () => {
     console.log('Iniciando Nueva Revision' + Date());
     productListPages.forEach(function (page) {
         craw.queue({
