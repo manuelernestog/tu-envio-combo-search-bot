@@ -27,6 +27,7 @@ Cron.schedule('*/2 6-20 * * *', () => {
 });
 
 Cron.schedule('1 20 * * *', () => {
+    console.log('Limpiando lista de productos');
     product_list_operations.clean_product_list();
 });
 
