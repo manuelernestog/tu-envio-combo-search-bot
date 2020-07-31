@@ -16,6 +16,7 @@ function process_product_list_response(res) {
     const products_url_list = craw_product_list_page(res.$, opt.base_url);
     const new_products_url_list = product_list_operations.get_new_products(products_url_list, opt.province);
     new_products_url_list.forEach(function (url) {
+            console.log('Nuevo producto encontrado');
             product_list_operations.add_product(url, opt.province, opt.store);
             create_url_request(url, opt);
         }
@@ -33,12 +34,16 @@ function craw_product_list_page(page, base_url) {
 function process_product_response(res) {
     if (product_is_availability(res)) {
         if (valid_response(res)) {
+            console.log('Publicando nuevo producto ' + res.options.uri);
             let product = get_product_info(res);
             let message = create_message(product, res);
             bot_module.send_message(message, product);
         } else {
+            console.log('Cargo mal el producto, solicitandolo again');
             create_url_request(res.options.uri, res.options);
         }
+    } else {
+        console.log('El Producto Ya no estaba disponible' + res.options.uri);
     }
 }
 
