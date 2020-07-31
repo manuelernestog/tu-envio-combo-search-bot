@@ -5,7 +5,7 @@
     "page_type": "product_list",
     "store_type": "tu_envio",
     "store": "Cuatro Caminos",
-    "province": "Habana"
+    "province": "habana"
   },
   {
   "base_url": "https://www.tuenvio.cu/tipicaboyeros/",
@@ -13,7 +13,7 @@
   "page_type": "product_list",
   "store_type": "tu_envio",
   "store": "La Tipica Boyeros",
-  "province": "Habana"
+  "province": "habana"
 },
   {
     "base_url": "https://www.tuenvio.cu/tvpedregal/",
@@ -21,7 +21,7 @@
     "page_type": "product_list",
     "store_type": "tu_envio",
     "store": "El Pedregal",
-    "province": "Habana"
+    "province": "habana"
   },
   {
     "base_url": "https://www.tuenvio.cu/carlos3/",
@@ -29,7 +29,7 @@
     "page_type": "product_list",
     "store_type": "tu_envio",
     "store": "Carlos III",
-    "province": "Habana"
+    "province": "habana"
   },
   {
     "base_url": "https://www.tuenvio.cu/caribehabana/",
@@ -37,7 +37,7 @@
     "page_type": "product_list",
     "store_type": "tu_envio",
     "store": "Villa Diana",
-    "province": "Habana"
+    "province": "habana"
   },
   {
     "base_url": "https://www.tuenvio.cu/ciego/",
@@ -45,6 +45,14 @@
     "page_type": "product_list",
     "store_type": "tu_envio",
     "store": "Ciego de Avila",
-    "province": "Ciego"
+    "province": "ciego"
+  },
+  {
+    "base_url": "http://127.0.0.1:8080/",
+    "url_end": "Tuenvio%20CarlosIII%20-%20Envios%20Cuba%2C%20Paquetes%20a%20Cuba%20-%20M%C3%93DULOS.html",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Test",
+    "province": "test"
   }
 ]

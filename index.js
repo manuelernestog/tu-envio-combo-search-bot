@@ -8,7 +8,7 @@ const productListPages = JSON.parse(Fs.readFileSync('assets/product-list-pages.j
 
 global.bot = new TelegramBot(botKey, {polling: true});
 global.craw = require('./modules/crawler-module');
-global.activeProductsList = []
+global.activeProductsList = {test: [], habana: [], ciego: []}
 
 Cron.schedule('*/2 6-20 * * *', () => {
     console.log('Iniciando Nueva Revision' + Date());

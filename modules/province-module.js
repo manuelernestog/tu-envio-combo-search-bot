@@ -1,10 +1,12 @@
 module.exports = {
     get_chat_id_by_province: function (province) {
         switch (province) {
-            case "Habana":
+            case "habana":
                 return "@TuEnvioComboAlertHabana";
-            case "Ciego":
+            case "ciego":
                 return "@TuEnvioComboAlertCiego";
+            case "test":
+                return "@tuEnvioComboSearchTestChanel";
         }
     },
     get_province_btn: function () {
