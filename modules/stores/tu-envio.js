@@ -3,8 +3,8 @@ const bot_module = require('../bot-module');
 const product_list_operations = require('../products-list-operations')
 
 exports.process_response = function (res) {
-    console.log('Revisando ' + res.options.store + ' - ' + res.options.page_type);
     if (res.options.page_type == "product_list") {
+        console.log('Revisando ' + res.options.store);
         process_product_list_response(res);
     } else {
         process_product_response(res);

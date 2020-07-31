@@ -10,6 +10,11 @@ module.exports = {
         }
         activeProductsList[province].push(new_product);
     },
+    clean_product_list: function () {
+        for (var key in activeProductsList) {
+            activeProductsList[key] = [];
+        }
+    },
 };
 
 

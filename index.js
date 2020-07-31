@@ -2,6 +2,7 @@ const Cron = require("node-cron");
 const TelegramBot = require('node-telegram-bot-api');
 const Fs = require('fs');
 const bot_module = require('./modules/bot-module');
+const product_list_operations = require('./modules/products-list-operations');
 
 const botKey = "1299051161:AAH1Lut4GeEd4HvAbRwRC87bwltM31Rt_y0";
 const productListPages = JSON.parse(Fs.readFileSync('assets/product-list-pages.json', 'utf8'));
@@ -23,6 +24,10 @@ Cron.schedule('*/2 6-20 * * *', () => {
             url_end: page.url_end,
         });
     });
+});
+
+Cron.schedule('1 20 * * *', () => {
+    product_list_operations.clean_product_list();
 });
 
 bot.onText(/\/start/, (msg) => {
