@@ -1,45 +1,5 @@
 [
   {
-    "base_url": "https://www.tuenvio.cu/4caminos/",
-    "url_end": "Products?depPid=46095",
-    "page_type": "product_list",
-    "store_type": "tu_envio",
-    "store": "Cuatro Caminos",
-    "province": "habana"
-  },
-  {
-    "base_url": "https://www.tuenvio.cu/tipicaboyeros/",
-    "url_end": "Products?depPid=46095",
-    "page_type": "product_list",
-    "store_type": "tu_envio",
-    "store": "La Tipica Boyeros",
-    "province": "habana"
-  },
-  {
-    "base_url": "https://www.tuenvio.cu/tvpedregal/",
-    "url_end": "Products?depPid=55",
-    "page_type": "product_list",
-    "store_type": "tu_envio",
-    "store": "El Pedregal",
-    "province": "habana"
-  },
-  {
-    "base_url": "https://www.tuenvio.cu/carlos3/",
-    "url_end": "Products?depPid=46095",
-    "page_type": "product_list",
-    "store_type": "tu_envio",
-    "store": "Carlos III",
-    "province": "habana"
-  },
-  {
-    "base_url": "https://www.tuenvio.cu/caribehabana/",
-    "url_end": "Products?depPid=46087",
-    "page_type": "product_list",
-    "store_type": "tu_envio",
-    "store": "Villa Diana",
-    "province": "habana"
-  },
-  {
     "base_url": "https://www.tuenvio.cu/ciego/",
     "url_end": "Products?depPid=46095",
     "page_type": "product_list",
@@ -102,5 +62,61 @@
     "store_type": "tu_envio",
     "store": "Sancti Spiritus",
     "province": "sancti"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/camaguey/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Camaguey",
+    "province": "camaguey"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/tunas/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Las Tunas",
+    "province": "tunas"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/holguin/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Holguin",
+    "province": "holguin"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/granma/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Granma",
+    "province": "granma"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/santiago/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Santiago de Cuba",
+    "province": "santiago"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/guantanamo/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Guantanamo",
+    "province": "guantanamo"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/isla/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Isla de la Juventud",
+    "province": "isla"
   }
 ]

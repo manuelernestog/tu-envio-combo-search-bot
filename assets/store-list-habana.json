@@ -1,0 +1,42 @@
+[
+  {
+    "base_url": "https://www.tuenvio.cu/4caminos/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Cuatro Caminos",
+    "province": "habana"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/tipicaboyeros/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "La Tipica Boyeros",
+    "province": "habana"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/tvpedregal/",
+    "url_end": "Products?depPid=55",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "El Pedregal",
+    "province": "habana"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/carlos3/",
+    "url_end": "Products?depPid=46095",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Carlos III",
+    "province": "habana"
+  },
+  {
+    "base_url": "https://www.tuenvio.cu/caribehabana/",
+    "url_end": "Products?depPid=46087",
+    "page_type": "product_list",
+    "store_type": "tu_envio",
+    "store": "Villa Diana",
+    "province": "habana"
+  }
+]
