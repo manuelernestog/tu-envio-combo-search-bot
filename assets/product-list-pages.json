@@ -1,13 +1,5 @@
 [
   {
-    "base_url": "http://127.0.0.1:8080/",
-    "url_end": "Tuenvio%20CarlosIII%20-%20Envios%20Cuba%2C%20Paquetes%20a%20Cuba%20-%20M%C3%93DULOS.html",
-    "page_type": "product_list",
-    "store_type": "tu_envio",
-    "store": "Test",
-    "province": "test"
-  },
-  {
     "base_url": "https://www.tuenvio.cu/4caminos/",
     "url_end": "Products?depPid=46095",
     "page_type": "product_list",

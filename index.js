@@ -11,7 +11,7 @@ global.bot = new TelegramBot(botKey, {polling: true});
 global.craw = require('./modules/crawler-module');
 global.activeProductsList = {test: [], habana: [], ciego: []}
 
-Cron.schedule('*/2 7-20 * * *', () => {
+function review_stores(){
     console.log('Iniciando Nueva Revision' + Date());
     productListPages.forEach(function (page) {
         craw.queue({
@@ -24,9 +24,21 @@ Cron.schedule('*/2 7-20 * * *', () => {
             url_end: page.url_end,
         });
     });
+}
+
+Cron.schedule('*/2 8-10 * * *', () => {
+    review_stores();
 });
 
-Cron.schedule('1 20 * * *', () => {
+Cron.schedule('*/5 10-12 * * *', () => {
+    review_stores();
+});
+
+Cron.schedule('*/10 12-18 * * *', () => {
+    review_stores();
+});
+
+Cron.schedule('1 18 * * *', () => {
     console.log('Limpiando lista de productos');
     product_list_operations.clean_product_list();
 });
@@ -34,7 +46,7 @@ Cron.schedule('1 20 * * *', () => {
 bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, "Hola, soy TuEnvioComboSearchBot (TECSbot). Selecciona /provincias para obtener el listado de canales disponibles o /ayuda para saber un poco mas de mi.", {
         "reply_markup": {
-            "keyboard": [["/provincias"], ["/ayuda"]]
+            "keyboard": [["/provincias"], ["/ayuda"]],'resize_keyboard': true
         }
     });
 });
