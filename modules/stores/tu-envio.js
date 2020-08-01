@@ -39,16 +39,21 @@ function process_product_response(res) {
             let message = create_message(product, res);
             bot_module.send_message(message, product);
         } else {
-            console.log('Cargo mal el producto, solicitandolo again');
+            console.log('Cargo mal el producto, solicitandolo again ' + res.options.uri);
             create_url_request(res.options.uri, res.options);
         }
     } else {
-        console.log('El Producto Ya no estaba disponible' + res.options.uri);
+        console.log('El Producto Ya no estaba disponible ' + res.options.uri);
     }
 }
 
 function valid_response(res) {
-    return res.$('.product-title h4').text() == '' ? false : true
+    let valid_response = false;
+    if (res.$('.product-title h4').text() != '')
+        valid_response = true;
+    if (res.$('.product-price span').text() != '')
+        valid_response = true;
+    return valid_response
 }
 
 function product_is_availability(res) {
@@ -59,7 +64,7 @@ function product_is_availability(res) {
 
 function get_product_info(res) {
     var product = {
-        title: res.$('.product-title h4').text(),
+        title: res.$('.product-title h4').text() || "Kit Mixto",
         price: res.$('.product-price span').text(),
         store: res.options.store,
         province: res.options.province,

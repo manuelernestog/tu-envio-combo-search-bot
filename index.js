@@ -28,11 +28,7 @@ global.activeProductsList = {
 schedule_module.init_schedule();
 
 bot.onText(/\/start/, (msg) => {
-    bot.sendMessage(msg.chat.id, "Hola, soy TuEnvioComboSearchBot (TECSbot). Selecciona /provincias para obtener el listado de canales disponibles o /ayuda para saber un poco mas de mi.", {
-        "reply_markup": {
-            "keyboard": [["/provincias"], ["/ayuda"]], 'resize_keyboard': true
-        }
-    });
+    bot_module.start_bot(msg);
 });
 
 bot.onText(/\/provincias/, function get_provinces_chanel_list(msg) {

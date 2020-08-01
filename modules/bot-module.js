@@ -1,6 +1,13 @@
 const province_module = require("./province-module");
 
 module.exports = {
+    start_bot: function (msg) {
+        bot.sendMessage(msg.chat.id, "Hola, soy TuEnvioComboSearchBot (TECSbot). Selecciona /provincias para obtener el listado de canales con alertas automaticas disponibles o /ayuda si tienes alguna duda.", {
+            "reply_markup": {
+                "keyboard": [["/provincias"], ["/ayuda"]], 'resize_keyboard': true
+            }
+        });
+    },
     send_message: function (message, product) {
         store_link = {inline_keyboard: [[{text: "\u{1F6D2} Ir al producto", url: product.url}]]}
         const chat_id = province_module.get_chat_id_by_province(product.province);
