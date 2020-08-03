@@ -32,7 +32,7 @@ function craw_product_list_page(page, base_url) {
 }
 
 function process_product_response(res) {
-    if (product_is_availability(res)) {
+    if (product_is_available(res) && !invalid_product(res)) {
         if (valid_response(res)) {
             console.log('Publicando nuevo producto ' + res.options.uri);
             let product = get_product_info(res);
@@ -56,10 +56,14 @@ function valid_response(res) {
     return valid_response
 }
 
-function product_is_availability(res) {
+function product_is_available(res) {
     const unavailability_message = 'El producto que usted busca no esta disponible en nuestra tienda.';
     const unavailability_selector = '#ctl00_cphPage_formProduct_ctl00_productError_missingProduct';
     return res.$(unavailability_selector).text() == unavailability_message ? false : true;
+}
+
+function invalid_product(res) {
+    return res.$("#ctl00_cphPage_lblError").text() == 'Ocurrió un error!!!' ? true : false;
 }
 
 function get_product_info(res) {
