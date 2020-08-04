@@ -4,21 +4,21 @@ module.exports = {
             case "test":
                 return "-1001483673749";
             case "habana":
-                return "@TuEnvioComboAlertHabana";
+                return "-1001486503580";
             case "ciego":
-                return "@TuEnvioComboAlertCiego";
+                return "-1001350572599";
             case "pinar":
-                return "@TuEnvioComboAlertPinar";
+                return "-1001493550843";
             case "artemisa":
                 return "-1001208969284";
             case "mayabeque":
                 return "-1001204500414";
             case "matanzas":
-                return "@TuEnvioComboAlertMatanzas";
+                return "-1001431719945";
             case "cienfuegos":
-                return "@TuEnvioComboAlertCienfuegos";
+                return "-1001327687490";
             case "villaclara":
-                return "@TuEnvioComboAlertVillaclara";
+                return "-1001447290535";
             case "sancti":
                 return "-1001494280689";
             case "camaguey":
@@ -42,7 +42,7 @@ module.exports = {
             reply_markup: {
                 inline_keyboard: [
                     [
-                        {text: "Pinar del Rio", url: 'https://t.me/TuEnvioComboAlertPinar'},
+                        {text: "Pinar del Rio", url: 'https://t.me/joinchat/AAAAAFkFxvvb3O4njcuZYw'},
                         {text: "Artemisa", url: 'https://t.me/TuEnvioComboAlertArtemisa'}
                     ],
                     [
@@ -50,15 +50,15 @@ module.exports = {
                         {text: "Mayabeque", url: 'https://t.me/joinchat/AAAAAEfLN74Tu7oZfEEc3g'}
                     ],
                     [
-                        {text: "Matanzas", url: 'https://t.me/tuEnvioComboAlertMatanzas'},
-                        {text: "Cienfuegos", url: 'https://t.me/TuEnvioComboAlertCienfuegos'}
+                        {text: "Matanzas", url: 'https://t.me/joinchat/AAAAAFVWUAnYmLqsoLDfGQ'},
+                        {text: "Cienfuegos", url: 'https://t.me/joinchat/AAAAAE8i50Lq7aUHK71dxg'}
                     ],
                     [
-                        {text: "Villa Clara", url: 'https://t.me/tuEnvioComboAlertVillaclara'},
-                        {text: "Sancti Spiritus", url: 'https://t.me/joinchat/AAAAAFkQ6fFNTbfmRkSfSQ'}
+                        {text: "Villa Clara", url: 'https://t.me/joinchat/AAAAAFZD5qeGSE_3mAnTcg'},
+                        {text: "Sancti Spiritus", url: 'https://t.me/joinchat/AAAAAFZD5qeGSE_3mAnTcg'}
                     ],
                     [
-                        {text: "Ciego de Avila", url: 'https://t.me/tuEnvioComboAlertCiego'},
+                        {text: "Ciego de Avila", url: 'https://t.me/joinchat/AAAAAFCAGjeqthefiLNuDw'},
                         {text: "Camaguey", url: 'https://t.me/joinchat/AAAAAFhPNCD22vlBmEmF7w'}
                     ],
                     [

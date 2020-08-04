@@ -1,26 +1,30 @@
-const Cron = require("node-cron");
+const cron1 = require("node-cron");
+const cron2 = require("node-cron");
 const product_list_operations = require('./products-list-operations');
 const Fs = require('fs');
 const habanaStoreList = JSON.parse(Fs.readFileSync('./assets/store-list-habana.json', 'utf8'));
 const cubaStoreList = JSON.parse(Fs.readFileSync('./assets/store-list-cuba.json', 'utf8'));
 
 module.exports.init_schedule = function () {
-    Cron.schedule('*/2 8-9 * * *', () => {
+    cron1.schedule('*/2 8-9 * * *', () => {
         console.log('iniciando revision de las de 2 min');
         review_habana_stores();
         review_cuba_stores();
     });
-    Cron.schedule('*/5 10-11 * * *', () => {
-        console.log('iniciando revision de las de 5 min');
-        review_habana_stores();
+    cron1.schedule('*/5 10-11 * * *', () => {
+        console.log('iniciando revision de las de 5 min cuba');
         review_cuba_stores();
     });
-    Cron.schedule('*/10 12-18 * * *', () => {
+    cron2.schedule('*/2 10-11 * * *', () => {
+        console.log('iniciando revision de las de 2 min Habana');
+        review_habana_stores();
+    });
+    cron1.schedule('*/10 12-17 * * *', () => {
         console.log('iniciando revision de las de 10 min');
         review_habana_stores();
         review_cuba_stores();
     });
-    Cron.schedule('1 18 * * *', () => {
+    cron1.schedule('1 17 * * *', () => {
         console.log('Limpiando lista de productos');
         product_list_operations.clean_product_list();
     });
