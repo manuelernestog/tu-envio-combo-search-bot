@@ -3,7 +3,7 @@ const province_module = require("./province-module");
 module.exports = {
     start_bot: function (msg) {
         console.log("Abrieron el bot-----------------------------------------------------------------------------------")
-        bot.sendMessage(msg.chat.id, "Hola, soy TuEnvioComboSearchBot (TECSbot). Selecciona /provincias para obtener el listado de canales con alertas automaticas disponibles o /ayuda si tienes alguna duda.", {
+        bot.sendMessage(msg.chat.id, "Hola, soy TuEnvioComboSearchBot (TECSbot). Selecciona /provincias para obtener el listado de canales con alertas automáticas disponibles o /ayuda si tienes alguna duda.", {
             "reply_markup": {
                 "keyboard": [["/provincias"], ["/ayuda"]], 'resize_keyboard': true
             }
@@ -19,16 +19,17 @@ module.exports = {
     },
     help_message: function (msg) {
         const help_message = `<b>\u{1F449} Que es TuEnvioComboSearchBot?</b>
-Es un robot  de Telegram que se encarga de buscar nuevos combos que se publiquen en las tiendas virtuales Tu Envio.
-<b>\u{1F449} Que soluciona este robot ?</b>
-La tienda virtual Tu Envio no cuentan con sisitemas de notificación para avisar a sus usuarios de que se agrego un nuevo producto por lo cual tienen que estar constantemente revisando la tienda para conocer si existe algun producto disponible. El robot hace este trabajao por ellos y es capaz de notificar a todos los usuarios subscritos a los diferentes canales de difusión.
+Es un robot  que loacaliza nuevos productos en las tiendas virtuales TuEnvio y los publica en canales de Telegram segun su provincia.
+<b>\u{1F449} Porque se creo este robot ?</b>
+La tienda virtual TuEnvio no cuentan con un sisitema para notificar la publicación de nuevos productos. El robot se encarga de este trabajo, notificando a todos los usuarios subscritos a los diferentes canales de difusión.
 <b>\u{1F449} Como funciona ?</b>
-El robot TuEnvioComboSearchBot busca en cada 2 minutos (Para no hacer tantas peticiones a los servidores) en las tiendas virtuales si han publicado algún producto nuevo. En caso de encontrar un producto nuevo automáticamente lo publica en el canal que corresponda a la provincia de la tienda donde se encontró el producto.
+El robot busca sistematicamente en las tiendas virtuales nuevos productos. una vez encontrados los publica en el canal que le corresponda, notifificando asi a todos los usuarios subscritos.
+<b>\u{1F449} Es mejor el robot que buscar personalmente?</b>
+El robot trabaja los 7 dias de la semana de 8am a 6pm sin interrupciones, revisando todas las tiendas del país en cuestion de segundos. Saque usted sus propias concluciones :)
 <b>\u{1F449} Porque un canal y no una aplicación?</b>
-La publicación en un canal facilita que la búsqueda que hace el robot es una sola ya que se efectúa desde el servidor donde está alojado el robot, las soluciones que se ejecutan en aplicaciones ejecutan las búsquedas desde cada celular o terminal lo cual es muy perjudicial para el funcionamiento y rendimiento de la tienada virtual.
-<b>\u{1F449} Quien desarrolló el robot y porqué ?</b>   
-El robot es desarrollado por el Proyecto Zuntek, conformado por ingenieros informáticos cubanos con el objetivo de contribuir con la economia del país y la informatización de la sociedad mediante el desarrollo de soluciones informáticas para la poblacion cubana.
-El robot se desarrollo para solventar la necesidad de un sistema de notificaciones automático de nuevos productos en las tiendas virtuales cubanas.       
+La publicación en un canal facilita que la busqueda en las tienda se realize una sola vez efectuándose desde el servidor donde está alojado el robot, las aplicaciones con este fin impactan negativamente en la estabilidad de la tienda ya las búsquedas se realizan desde cada terminal (Telefono), sobrecargando el sitio y haciéndolo inaccesible en ocasiones.
+<b>\u{1F449} Quien desarrolló el robot ?</b>   
+El robot es desarrollado por el Proyecto Zuntek, conformado por ingenieros informáticos cubanos con el objetivo de contribuir con la informatización de la sociedad mediante el desarrollo de soluciones informáticas para la poblacion cubana.
 `;
         bot.sendMessage(msg.chat.id, help_message, {parse_mode: 'HTML'});
     }
