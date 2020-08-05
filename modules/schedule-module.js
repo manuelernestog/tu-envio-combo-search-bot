@@ -6,7 +6,7 @@ const habanaStoreList = JSON.parse(Fs.readFileSync('./assets/store-list-habana.j
 const cubaStoreList = JSON.parse(Fs.readFileSync('./assets/store-list-cuba.json', 'utf8'));
 
 module.exports.init_schedule = function () {
-    cron1.schedule('*/2 8-9 * * *', () => {
+    cron1.schedule('*/2 7-9 * * *', () => {
         console.log('iniciando revision de las de 2 min');
         review_habana_stores();
         review_cuba_stores();
@@ -19,7 +19,7 @@ module.exports.init_schedule = function () {
         console.log('iniciando revision de las de 2 min Habana');
         review_habana_stores();
     });
-    cron1.schedule('*/10 12-17 * * *', () => {
+    cron1.schedule('*/10 12-23 * * *', () => {
         console.log('iniciando revision de las de 10 min');
         review_habana_stores();
         review_cuba_stores();

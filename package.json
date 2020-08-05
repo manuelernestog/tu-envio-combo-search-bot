@@ -18,6 +18,7 @@
     "crawler": "^1.2.2",
     "fs": "0.0.1-security",
     "node-cron": "^2.0.3",
-    "node-telegram-bot-api": "^0.50.0"
+    "node-telegram-bot-api": "^0.50.0",
+    "request": "^2.88.2"
   }
 }

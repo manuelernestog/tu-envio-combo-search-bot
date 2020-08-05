@@ -23,7 +23,7 @@ Es un robot  que localiza nuevos productos en las tiendas virtuales TuEnvio y lo
 <b>\u{1F449} Porque se creo este robot ?</b>
 La tienda virtual TuEnvio no cuentan con un sistema para notificar la publicación de nuevos productos. El robot se encarga de este trabajo, notificando a todos los usuarios subscritos a los diferentes canales de difusión.
 <b>\u{1F449} Como funciona ?</b>
-El robot trabaja los 7 días de la semana de 8am a 6pm sin interrupciones, revisando todas las tiendas del país buscando nuevos productos. Una vez encontrados los publica en el canal que le corresponda, notificando a todos los usuarios subscritos.
+El robot trabaja los 24x7 sin interrupciones variando su intensidad segun el horario, revisando todas las tiendas del país en busca de nuevos productos. Una vez encontrados los publica en el canal que le corresponda notificando a todos los usuarios subscritos.
 <b>\u{1F449} Porque un canal y no una aplicación?</b>
 La publicación en un canal facilita que la búsqueda en las tiendas se realice una sola vez efectuándose desde el servidor donde está alojado el robot, las aplicaciones con este fin impactan negativamente en la estabilidad de la tienda ya las búsquedas se realizan desde cada terminal, sobrecargando el sitio y haciéndolo inaccesible en ocasiones.
 <b>\u{1F449} Quien desarrolló el robot ?</b>   
