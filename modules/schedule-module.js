@@ -6,27 +6,30 @@ const habanaStoreList = JSON.parse(Fs.readFileSync('./assets/store-list-habana.j
 const cubaStoreList = JSON.parse(Fs.readFileSync('./assets/store-list-cuba.json', 'utf8'));
 
 module.exports.init_schedule = function () {
-    cron1.schedule('*/2 7-9 * * *', () => {
-        console.log('iniciando revision de las de 2 min');
+    cron1.schedule('0 0 * * *', () => {
+        product_list_operations.clean_product_list();
+    });
+    cron1.schedule('*/3 8-9 * * *', () => {
         review_habana_stores();
+    });
+    cron2.schedule('*/5 8-9 * * *', () => {
         review_cuba_stores();
     });
     cron1.schedule('*/5 10-11 * * *', () => {
-        console.log('iniciando revision de las de 5 min cuba');
         review_cuba_stores();
-    });
-    cron2.schedule('*/2 10-11 * * *', () => {
-        console.log('iniciando revision de las de 2 min Habana');
         review_habana_stores();
     });
-    cron1.schedule('*/10 12-23 * * *', () => {
-        console.log('iniciando revision de las de 10 min');
+    cron1.schedule('*/10 12-16 * * *', () => {
         review_habana_stores();
         review_cuba_stores();
     });
-    cron1.schedule('1 17 * * *', () => {
-        console.log('Limpiando lista de productos');
-        product_list_operations.clean_product_list();
+    cron1.schedule('*/30 17-23 * * *', () => {
+        review_habana_stores();
+        review_cuba_stores();
+    });
+    cron1.schedule('*/30 0-7 * * *', () => {
+        review_habana_stores();
+        review_cuba_stores();
     });
 };
 
