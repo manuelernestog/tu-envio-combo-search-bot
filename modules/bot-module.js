@@ -14,6 +14,12 @@ module.exports = {
         const chat_id = province_module.get_chat_id_by_province(product.province);
         bot.sendMessage(chat_id, message, {parse_mode: 'HTML', reply_markup: store_link});
     },
+    send_message_to_all: function (message, opt) {
+        for (var key in activeProductsList) {
+            const chat_id = province_module.get_chat_id_by_province(key);
+            bot.sendMessage(chat_id, message, opt);
+        }
+    },
     get_provinces_btn: function (msg) {
         bot.sendMessage(msg.chat.id, 'Lista de Canales de Alertas Automáticas', province_module.get_province_btn());
     },
@@ -27,7 +33,7 @@ El robot trabaja los 24x7 sin interrupciones variando su intensidad segun el hor
 <b>\u{1F449} Porque un canal y no una aplicación?</b>
 La publicación en un canal facilita que la búsqueda en las tiendas se realice una sola vez efectuándose desde el servidor donde está alojado el robot, las aplicaciones con este fin impactan negativamente en la estabilidad de la tienda ya las búsquedas se realizan desde cada terminal, sobrecargando el sitio y haciéndolo inaccesible en ocasiones.
 <b>\u{1F449} Quien desarrolló el robot ?</b>   
-El robot es desarrollado por el Proyecto Zuntek, conformado por ingenieros informáticos cubanos con el objetivo de contribuir con la informatización de la sociedad mediante el desarrollo de soluciones informáticas para la población cubana.
+El robot es desarrollado por el Proyecto Zuntek, conformado por ingenieros informáticos cubanos con el objetivo de contribuir con la informatización de la sociedad mediante el desarrollo de soluciones informáticas para la población.
 `;
         bot.sendMessage(msg.chat.id, help_message, {parse_mode: 'HTML'});
     }
