@@ -1,7 +1,7 @@
 const cron1 = require("node-cron");
 const cron2 = require("node-cron");
 const cron3 = require("node-cron");
-const bot_module = require('../bot-module');
+const bot_module = require('./bot-module');
 const product_list_operations = require('./products-list-operations');
 const Fs = require('fs');
 const habanaStoreList = JSON.parse(Fs.readFileSync('./assets/store-list-habana.json', 'utf8'));
