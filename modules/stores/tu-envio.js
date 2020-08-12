@@ -15,18 +15,20 @@ function process_product_list_response(res) {
     const opt = res.options;
     const products_url_list = craw_product_list_page(res.$, opt.base_url);
     const new_products_url_list = product_list_operations.get_new_products(products_url_list, opt.province);
-    new_products_url_list.forEach(function (url) {
+    new_products_url_list.forEach(function (product) {
             console.log('Nuevo producto encontrado');
-            product_list_operations.add_product(url, opt.province, opt.store);
-            create_url_request(url, opt);
+            product_list_operations.add_product(product, opt.province, opt.store);
+            create_url_request(product.url, opt);
         }
     );
 }
 
 function craw_product_list_page(page, base_url) {
     let products_list = [];
-    page(".hProductItems .thumbTitle a").each(function (i, elem) {
-        products_list.push(base_url + $(this).attr('href'));
+    page(".hProductItems li").each(function (i, elem) {
+        const product_url = base_url + $(this).find(".thumbTitle a").attr('href');
+        const img_url = $(this).find(".thumbnail object").attr('data');
+        products_list.push({url: product_url, img: img_url});
     });
     return products_list;
 }
