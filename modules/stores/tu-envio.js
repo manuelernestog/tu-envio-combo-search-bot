@@ -1,6 +1,8 @@
 const $ = require('cheerio');
 const bot_module = require('../bot-module');
 const product_list_operations = require('../products-list-operations')
+const download_image = require('../download-image-module')
+const send_picture = true;
 
 exports.process_response = function (res) {
     if (res.options.page_type == "product_list") {
@@ -12,12 +14,13 @@ exports.process_response = function (res) {
 }
 
 function process_product_list_response(res) {
-    const opt = res.options;
+    var opt = res.options;
     const products_url_list = craw_product_list_page(res.$, opt.base_url);
     const new_products_url_list = product_list_operations.get_new_products(products_url_list, opt.province);
     new_products_url_list.forEach(function (product) {
             console.log('Nuevo producto encontrado');
             product_list_operations.add_product(product, opt.province, opt.store);
+            opt.img = product.img;
             create_url_request(product.url, opt);
         }
     );
@@ -39,7 +42,16 @@ function process_product_response(res) {
             console.log('Publicando nuevo producto ' + res.options.uri);
             let product = get_product_info(res);
             let message = create_message(product, res);
-            bot_module.send_message(message, product);
+            if (send_picture && product.img != "https://imagenes.tuenvio.cu/Img_Data/215x215/") {
+                download_image(product.img,
+                    () => {
+                        bot_module.send_img_message(message, product)
+                    }, () => {
+                        bot_module.send_message(message, product)
+                    });
+            } else {
+                bot_module.send_message(message, product);
+            }
         } else {
             console.log('Cargo mal el producto, solicitandolo again ' + res.options.uri);
             create_url_request(res.options.uri, res.options);
@@ -73,8 +85,10 @@ function get_product_info(res) {
         title: res.$('.product-title h4').text() || "Kit Mixto",
         price: res.$('.product-price span').text(),
         store: res.options.store,
+        img: res.options.img,
         province: res.options.province,
         url: res.options.uri,
+        // url: res.options.uri,
         products: []
     }
     res.$('.product-tab table.table tr').each(function (i, elem) {
@@ -109,6 +123,7 @@ function create_url_request(url, opt) {
         store_type: opt.store_type,
         province: opt.province,
         store: opt.store,
-        base_url: opt.base_url
+        base_url: opt.base_url,
+        img: opt.img
     });
 }

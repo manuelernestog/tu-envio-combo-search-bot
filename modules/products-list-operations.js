@@ -5,7 +5,6 @@ module.exports = {
     add_product: function (product, province, store) {
         new_product = {
             url: product.url,
-            img: product.img,
             province: province,
             store: store,
         }

@@ -1,4 +1,5 @@
 const province_module = require("./province-module");
+const fs = require('fs')
 
 module.exports = {
     start_bot: function (msg) {
@@ -13,6 +14,23 @@ module.exports = {
         store_link = {inline_keyboard: [[{text: "\u{1F6D2} Ir al producto", url: product.url}]]}
         const chat_id = province_module.get_chat_id_by_province(product.province);
         bot.sendMessage(chat_id, message, {parse_mode: 'HTML', reply_markup: store_link});
+    },
+    send_img_message: function (message, product) {
+        store_link = {inline_keyboard: [[{text: "\u{1F6D2} Ir al producto", url: product.url}]]}
+        const chat_id = province_module.get_chat_id_by_province(product.province);
+        const img_array = product.img.split('/');
+        const file_name = img_array[img_array.length - 1]
+        const img_path = `./public/${file_name}`;
+        const fileOptions = {
+            filename: 'comboImage',
+            contentType: 'audio/mpeg',
+        };
+        try {
+            bot.sendPhoto(chat_id, img_path, {parse_mode: 'HTML', reply_markup: store_link, caption: message});
+        } catch (error) {
+            bot.sendMessage(chat_id, message, {parse_mode: 'HTML', reply_markup: store_link});
+        }
+
     },
     send_message_to_all: function (message, opt) {
         for (var key in activeProductsList) {

@@ -36,7 +36,7 @@ module.exports.init_schedule = function () {
         review_cuba_stores();
     });
     cron3.schedule('0 7 * * 1', () => {
-        msg = `Las alertas de este canal son publicadas por @TuEnvioComboSearchBot, bot desarrollado por el Proyecto <b>Zuntek</b>. Para enviarnos sugerencias, estar al tanto de mejoras y nuevas aplicaciones puede seguirnos en https://www.facebook.com/Zuntek \u{1F642}`;
+        msg = `Las alertas de este canal son publicadas por @TuEnvioComboSearchBot, bot desarrollado por el Proyecto <b>Zuntek</b>. Para enviarnos sugerencias, estar al tanto de mejoras y nuevas aplicaciones puede encontrarnos en Facebook como <b>Zuntek</b> \u{1F642}`;
         opt = {parse_mode: 'HTML', disable_web_page_preview: true};
         bot_module.send_message_to_all(msg, opt);
     });
