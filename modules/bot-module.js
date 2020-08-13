@@ -25,11 +25,14 @@ module.exports = {
             filename: 'comboImage',
             contentType: 'audio/mpeg',
         };
-        try {
-            bot.sendPhoto(chat_id, img_path, {parse_mode: 'HTML', reply_markup: store_link, caption: message});
-        } catch (error) {
+
+        bot.sendPhoto(chat_id, img_path, {
+            parse_mode: 'HTML',
+            reply_markup: store_link,
+            caption: message
+        }).catch(function (error) {
             bot.sendMessage(chat_id, message, {parse_mode: 'HTML', reply_markup: store_link});
-        }
+        });
 
     },
     send_message_to_all: function (message, opt) {

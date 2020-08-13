@@ -86,9 +86,10 @@ function get_product_info(res) {
         price: res.$('.product-price span').text(),
         store: res.options.store,
         img: res.options.img,
+        // Esto seria para usar la imagen con mas calidad
+        // img: res.$('.fancybox').attr('href'),
         province: res.options.province,
         url: res.options.uri,
-        // url: res.options.uri,
         products: []
     }
     res.$('.product-tab table.table tr').each(function (i, elem) {
