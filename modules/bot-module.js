@@ -3,11 +3,8 @@ const fs = require('fs')
 
 module.exports = {
     start_bot: function (msg) {
-        console.log("Abrieron el bot-----------------------------------------------------------------------------------")
         bot.sendMessage(msg.chat.id, "Hola, soy TuEnvioComboSearchBot (TECSbot). Selecciona /provincias para obtener el listado de canales con alertas automáticas disponibles o /ayuda si tienes alguna duda.", {
-            "reply_markup": {
-                "keyboard": [["/provincias"], ["/ayuda"]], 'resize_keyboard': true
-            }
+            "reply_markup": {"keyboard": [["/provincias"], ["/ayuda"]], 'resize_keyboard': true}
         });
     },
     send_message: function (message, product) {
@@ -16,16 +13,11 @@ module.exports = {
         bot.sendMessage(chat_id, message, {parse_mode: 'HTML', reply_markup: store_link});
     },
     send_img_message: function (message, product) {
-        store_link = {inline_keyboard: [[{text: "\u{1F6D2} Ir al producto", url: product.url}]]}
+        const store_link = {inline_keyboard: [[{text: "\u{1F6D2} Ir al producto", url: product.url}]]}
         const chat_id = province_module.get_chat_id_by_province(product.province);
         const img_array = product.img.split('/');
         const file_name = img_array[img_array.length - 1]
         const img_path = `./public/${file_name}`;
-        // const fileOptions = {
-        //     filename: product.title,
-        //     contentType: 'image/jpg',
-        // };
-
         bot.sendPhoto(chat_id, img_path, {
             parse_mode: 'HTML',
             reply_markup: store_link,
@@ -33,7 +25,6 @@ module.exports = {
         }).catch(function (error) {
             bot.sendMessage(chat_id, message, {parse_mode: 'HTML', reply_markup: store_link});
         });
-
     },
     send_message_to_all: function (message, opt) {
         for (var key in activeProductsList) {

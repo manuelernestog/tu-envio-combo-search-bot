@@ -11,27 +11,17 @@ module.exports.init_schedule = function () {
     cron1.schedule('0 7 * * *', () => {
         product_list_operations.clean_product_list();
     });
-    cron1.schedule('*/2 8-9 * * *', () => {
+    cron1.schedule('*/2 8-11 * * *', () => {
         review_habana_stores();
     });
-    cron2.schedule('*/3 8-9 * * *', () => {
+    cron2.schedule('*/4 8-11 * * *', () => {
         review_cuba_stores();
     });
-    cron1.schedule('*/3 10-11 * * *', () => {
-        review_habana_stores();
-    });
-    cron2.schedule('*/4 10-11 * * *', () => {
-        review_cuba_stores();
-    });
-    cron1.schedule('*/15 12-16 * * *', () => {
+    cron1.schedule('*/30 12-23 * * *', () => {
         review_habana_stores();
         review_cuba_stores();
     });
-    cron1.schedule('*/30 17-23 * * *', () => {
-        review_habana_stores();
-        review_cuba_stores();
-    });
-    cron1.schedule('*/30 0-7 * * *', () => {
+    cron1.schedule('* 0-7/1 * * *', () => {
         review_habana_stores();
         review_cuba_stores();
     });
