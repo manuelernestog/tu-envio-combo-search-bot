@@ -21,10 +21,10 @@ module.exports = {
         const img_array = product.img.split('/');
         const file_name = img_array[img_array.length - 1]
         const img_path = `./public/${file_name}`;
-        const fileOptions = {
-            filename: 'comboImage',
-            contentType: 'audio/mpeg',
-        };
+        // const fileOptions = {
+        //     filename: product.title,
+        //     contentType: 'image/jpg',
+        // };
 
         bot.sendPhoto(chat_id, img_path, {
             parse_mode: 'HTML',

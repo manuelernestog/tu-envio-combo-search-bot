@@ -86,6 +86,7 @@ function get_product_info(res) {
         price: res.$('.product-price span').text(),
         store: res.options.store,
         img: res.options.img,
+        description: res.$('.product-info dd').text(),
         // Esto seria para usar la imagen con mas calidad
         // img: res.$('.fancybox').attr('href'),
         province: res.options.province,
@@ -100,6 +101,7 @@ function get_product_info(res) {
         product.products.push(prod);
     })
     product.products.splice(0, 1);
+
     return product;
 }
 
@@ -112,6 +114,8 @@ function create_message(product, res) {
     product.products.forEach(function (item) {
         message.push(`<b>${item.count}</b> | ${item.name} \n`);
     })
+    if (product.products.length == 0)
+        message.push(`${product.description} \n`);
     message.push("-----------------------------------------------\n");
     message.push("Publicado por @TuEnvioComboSearchBot");
     return message.join('');
