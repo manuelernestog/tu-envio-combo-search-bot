@@ -7,7 +7,7 @@ module.exports = {
             "reply_markup": {"keyboard": [["/provincias"], ["/ayuda"]], 'resize_keyboard': true}
         });
     },
-    send_message: function (message, product) {
+    send_product_message: function (message, product) {
         store_link = {inline_keyboard: [[{text: "\u{1F6D2} Ir al producto", url: product.url}]]}
         const chat_id = province_module.get_chat_id_by_province(product.province);
         bot.sendMessage(chat_id, message, {parse_mode: 'HTML', reply_markup: store_link});

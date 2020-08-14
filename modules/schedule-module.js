@@ -2,6 +2,7 @@ const cron1 = require("node-cron");
 const cron2 = require("node-cron");
 const cron3 = require("node-cron");
 const bot_module = require('./bot-module');
+const file_module = require('./file-module');
 const product_list_operations = require('./products-list-operations');
 const Fs = require('fs');
 const habanaStoreList = JSON.parse(Fs.readFileSync('./assets/store-list-habana.json', 'utf8'));
@@ -9,7 +10,8 @@ const cubaStoreList = JSON.parse(Fs.readFileSync('./assets/store-list-cuba.json'
 
 module.exports.init_schedule = function () {
     cron1.schedule('0 7 * * *', () => {
-        product_list_operations.clean_product_list();
+        file_module.remove_public_folder();
+        file_module.crete_public_folder();
     });
     cron1.schedule('*/2 8-11 * * *', () => {
         review_habana_stores();
@@ -17,7 +19,7 @@ module.exports.init_schedule = function () {
     cron2.schedule('*/4 8-11 * * *', () => {
         review_cuba_stores();
     });
-    cron1.schedule('*/30 12-23 * * *', () => {
+    cron1.schedule('*/1 12-23 * * *', () => {
         review_habana_stores();
         review_cuba_stores();
     });
@@ -31,7 +33,6 @@ module.exports.init_schedule = function () {
         bot_module.send_message_to_all(msg, opt);
     });
 };
-
 
 function review_habana_stores() {
     console.log('Iniciando Nueva Revision Habana ' + Date());

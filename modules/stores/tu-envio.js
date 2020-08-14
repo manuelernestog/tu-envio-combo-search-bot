@@ -16,10 +16,9 @@ exports.process_response = function (res) {
 function process_product_list_response(res) {
     var opt = res.options;
     const products_url_list = craw_product_list_page(res.$, opt.base_url);
-    const new_products_url_list = product_list_operations.get_new_products(products_url_list, opt.province);
     product_list_operations.clean_old_products(products_url_list, opt.province);
+    const new_products_url_list = product_list_operations.get_new_products(products_url_list, opt.province);
     new_products_url_list.forEach(function (product) {
-            console.log('Nuevo producto encontrado');
             product_list_operations.add_product(product, opt.province, opt.store);
             opt.img = product.img;
             create_url_request(product.url, opt);
@@ -48,10 +47,10 @@ function process_product_response(res) {
                     () => {
                         bot_module.send_img_message(message, product)
                     }, () => {
-                        bot_module.send_message(message, product)
+                        bot_module.send_product_message(message, product)
                     });
             } else {
-                bot_module.send_message(message, product);
+                bot_module.send_product_message(message, product);
             }
         } else {
             console.log('Cargo mal el producto, solicitandolo again ' + res.options.uri);
@@ -87,9 +86,9 @@ function get_product_info(res) {
         price: res.$('.product-price span').text(),
         store: res.options.store,
         img: res.options.img,
-        description: res.$('.product-info dd').text(),
         // Esto seria para usar la imagen con mas calidad
         // img: res.$('.fancybox').attr('href'),
+        description: res.$('.product-info dd').text(),
         province: res.options.province,
         url: res.options.uri,
         products: []

@@ -2,9 +2,9 @@ process.env["NTBA_FIX_319"] = 1;
 process.env["NTBA_FIX_350"] = 1;
 const TelegramBot = require('node-telegram-bot-api');
 const bot_module = require('./modules/bot-module');
+const file_module = require('./modules/file-module');
 const botKey = "1299051161:AAH1Lut4GeEd4HvAbRwRC87bwltM31Rt_y0";
 const schedule_module = require('./modules/schedule-module');
-const fs = require('fs');
 
 global.bot = new TelegramBot(botKey, {polling: true});
 global.craw = require('./modules/crawler-module');
@@ -28,10 +28,7 @@ global.activeProductsList = {
     isla: [],
 }
 
-if (!fs.existsSync('./public')){
-    fs.mkdirSync('./public');
-    fs.chmod('./public', 0o777, (err) => {});
-}
+file_module.crete_public_folder();
 
 schedule_module.init_schedule();
 
