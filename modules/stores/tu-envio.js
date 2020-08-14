@@ -17,6 +17,7 @@ function process_product_list_response(res) {
     var opt = res.options;
     const products_url_list = craw_product_list_page(res.$, opt.base_url);
     const new_products_url_list = product_list_operations.get_new_products(products_url_list, opt.province);
+    product_list_operations.clean_old_products(products_url_list, opt.province);
     new_products_url_list.forEach(function (product) {
             console.log('Nuevo producto encontrado');
             product_list_operations.add_product(product, opt.province, opt.store);
