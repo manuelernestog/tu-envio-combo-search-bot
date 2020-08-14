@@ -1,5 +1,3 @@
-const moment = require('moment');
-
 module.exports = {
     add_product: function (product, province, store) {
         new_product = {url: product.url, province: province, store: store,}
