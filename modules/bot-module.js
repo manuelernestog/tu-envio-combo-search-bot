@@ -35,6 +35,14 @@ module.exports = {
     get_provinces_btn: function (msg) {
         bot.sendMessage(msg.chat.id, 'Lista de Canales de Alertas Automáticas', province_module.get_province_btn());
     },
+    send_zuntek_info_to_all: function () {
+        const msg = `Las alertas de este canal son publicadas por @TuEnvioComboSearchBot desarrollado por el Proyecto Zuntek. Para enviarnos sugerencias, estar al tanto de mejoras y nuevas aplicaciones puede encontrarnos en Facebook como <b>Zuntek</b> \u{1F642}
+----------------------------------------------------------
+ \u{26A0} Por le momento este servicio esta en desarrollo por lo que no esta disponible todo el dia y puede notar problemas en su funcionamiento. Lamentamos las molestias que esto pueda ocasionar. Feliz día y recuerde utilizar correctamente el nasobuco. \u{1F637}
+`;
+        const opt = {parse_mode: 'HTML', disable_web_page_preview: true};
+        send_message_to_all(msg, opt);
+    },
     help_message: function (msg) {
         const help_message = `<b>\u{1F449} Que es TuEnvioComboSearchBot?</b>
 Es un robot  que localiza nuevos productos en las tiendas virtuales TuEnvio y los publica en canales de Telegram según su provincia.

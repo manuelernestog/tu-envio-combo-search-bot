@@ -13,24 +13,17 @@ module.exports.init_schedule = function () {
         file_module.remove_public_folder();
         file_module.crete_public_folder();
     });
-    cron1.schedule('*/2 8-11 * * *', () => {
+    cron1.schedule('*/2 8-10 * * *', () => {
         review_habana_stores();
     });
-    cron2.schedule('*/4 8-11 * * *', () => {
-        review_cuba_stores();
-    });
-    cron1.schedule('*/1 12-23 * * *', () => {
+    cron1.schedule('*/4 11 * * *', () => {
         review_habana_stores();
+    });
+    cron2.schedule('*/5 8-11 * * *', () => {
         review_cuba_stores();
     });
-    cron1.schedule('* 0-7/1 * * *', () => {
-        review_habana_stores();
-        review_cuba_stores();
-    });
-    cron3.schedule('0 7 * * 1', () => {
-        msg = `Las alertas de este canal son publicadas por @TuEnvioComboSearchBot, bot desarrollado por el Proyecto <b>Zuntek</b>. Para enviarnos sugerencias, estar al tanto de mejoras y nuevas aplicaciones puede encontrarnos en Facebook como <b>Zuntek</b> \u{1F642}`;
-        opt = {parse_mode: 'HTML', disable_web_page_preview: true};
-        bot_module.send_message_to_all(msg, opt);
+    cron3.schedule('0 12 */5 * *', () => {
+     bot_module.send_zuntek_info_to_all();
     });
 };
 

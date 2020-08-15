@@ -15,9 +15,9 @@ exports.process_response = function (res) {
 
 function process_product_list_response(res) {
     var opt = res.options;
-    const products_url_list = craw_product_list_page(res.$, opt.base_url);
-    product_list_operations.clean_old_products(products_url_list, opt.province);
-    const new_products_url_list = product_list_operations.get_new_products(products_url_list, opt.province);
+    const page_products_list = craw_product_list_page(res.$, opt.base_url);
+    product_list_operations.clean_old_products(page_products_list, opt.province);
+    const new_products_url_list = product_list_operations.get_new_products(page_products_list, opt.province);
     new_products_url_list.forEach(function (product) {
             product_list_operations.add_product(product, opt.province, opt.store);
             opt.img = product.img;
