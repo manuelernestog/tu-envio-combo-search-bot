@@ -36,7 +36,7 @@ function craw_product_list_page(page, base_url) {
 }
 
 function process_product_response(res) {
-    if (!product_is_available(res)) {
+    if (product_is_available(res)) {
             console.log('Publicando nuevo producto ' + res.options.uri);
             let product = get_product_info(res);
             let message = create_message(product, res);
