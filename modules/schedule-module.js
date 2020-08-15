@@ -9,6 +9,7 @@ const habanaStoreList = JSON.parse(Fs.readFileSync('./assets/store-list-habana.j
 const cubaStoreList = JSON.parse(Fs.readFileSync('./assets/store-list-cuba.json', 'utf8'));
 
 module.exports.init_schedule = function () {
+    review_habana_stores();
     cron1.schedule('0 7 * * *', () => {
         file_module.remove_public_folder();
         file_module.crete_public_folder();
