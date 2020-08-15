@@ -38,5 +38,13 @@
     "store_type": "tu_envio",
     "store": "Villa Diana",
     "province": "habana"
+  },
+  {
+    "base_url": "https://5tay42.enzona.net/",
+    "url_end": "",
+    "page_type": "product_list",
+    "store_type": "5taY42",
+    "store": "5ta y 42",
+    "province": "habana"
   }
 ]
