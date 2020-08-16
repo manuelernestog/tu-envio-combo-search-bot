@@ -8,3 +8,5 @@ El robot trabaja los 24x7 sin interrupciones variando su intensidad segun el hor
 La publicación en un canal facilita que la búsqueda en las tiendas se realice una sola vez efectuándose desde el servidor donde está alojado el robot, las aplicaciones con este fin impactan negativamente en la estabilidad de la tienda ya las búsquedas se realizan desde cada terminal, sobrecargando el sitio y haciéndolo inaccesible en ocasiones.
 <b>👉 Quien desarrolló el robot ?</b>
 El robot es desarrollado por el Proyecto Zuntek, conformado por ingenieros informáticos cubanos con el objetivo de contribuir con la informatización de la sociedad mediante el desarrollo de soluciones informáticas para la población.
+---------------------------------------------------------------------------
+⚠️ Por le momento este servicio esta en desarrollo por lo que no esta disponible todo el dia y puede notar problemas en su funcionamiento. Lamentamos las molestias que esto pueda ocasionar.
