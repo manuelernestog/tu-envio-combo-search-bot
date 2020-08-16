@@ -6,7 +6,6 @@ const send_picture = true;
 
 exports.process_response = function (res) {
     if (res.options.page_type == "product_list") {
-        console.log('Revisando ' + res.options.store);
         process_product_list_response(res);
     } else {
         process_product_response(res);
@@ -16,7 +15,7 @@ exports.process_response = function (res) {
 function process_product_list_response(res) {
     var opt = res.options;
     const page_products_list = craw_product_list_page(res.$, opt.base_url);
-    product_list_operations.clean_old_products(page_products_list, opt.province);
+    product_list_operations.clean_old_products(page_products_list, opt.province, opt.store);
     const new_products_url_list = product_list_operations.get_new_products(page_products_list, opt.province);
     new_products_url_list.forEach(function (product) {
             product_list_operations.add_product(product, opt.province, opt.store);
