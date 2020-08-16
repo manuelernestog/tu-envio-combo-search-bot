@@ -28,11 +28,6 @@ global.activeProductsList = {
     isla: [],
 }
 
-const fs = require('fs')
-const msg = fs.readFileSync('./assets/zuntek_sms.txt', 'utf8');
-const opt = {parse_mode: 'HTML', disable_web_page_preview: true};
-bot.sendMessage("-1001483673749", msg, opt);
-
 file_module.crete_public_folder();
 
 schedule_module.init_schedule();
