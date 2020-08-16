@@ -1,3 +1,12 @@
+// {
+//     "base_url": "https://5tay42.enzona.net/",
+//     "url_end": "",
+//     "page_type": "product_list",
+//     "store_type": "5taY42",
+//     "store": "5ta y 42",
+//     "province": "habana"
+// }
+
 const $ = require('cheerio');
 const bot_module = require('../bot-module');
 const product_list_operations = require('../products-list-operations')
