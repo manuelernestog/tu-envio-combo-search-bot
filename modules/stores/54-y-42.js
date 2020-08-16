@@ -6,34 +6,6 @@
 //     "province": "habana"
 // }
 
-const $ = require('cheerio');
-const bot_module = require('../bot-module');
-const product_list_operations = require('../products-list-operations')
-const download_image = require('../download-image-module')
-const send_picture = false;
-
-exports.process_response = function (res) {
-    if (res.options.page_type == "product_list") {
-        console.log('Revisando ' + res.options.store);
-        process_product_list_response(res);
-    } else {
-        process_product_response(res);
-    }
-}
-
-function process_product_list_response(res) {
-    var opt = res.options;
-    const page_products_list = craw_product_list_page(res.$, opt.base_url);
-    product_list_operations.clean_old_products(page_products_list, opt.province);
-    const new_products_url_list = product_list_operations.get_new_products(page_products_list, opt.province);
-    new_products_url_list.forEach(function (product) {
-            product_list_operations.add_product(product, opt.province, opt.store);
-            opt.img = product.img;
-            create_url_request(product.url, opt);
-        }
-    );
-}
-
 function craw_product_list_page(page, base_url) {
     let products_list = [];
     page("#blocknewproducts li ").each(function (i, elem) {
@@ -90,15 +62,4 @@ function create_message(product, res) {
     message.push("-----------------------------------------------\n");
     message.push("Publicado por @TuEnvioComboSearchBot");
     return message.join('');
-}
-
-function create_url_request(url, opt) {
-    craw.queue({
-        uri: url,
-        page_type: "product",
-        province: opt.province,
-        store: opt.store,
-        base_url: opt.base_url,
-        img: opt.img
-    });
 }

@@ -6,6 +6,7 @@ const send_picture = true;
 
 exports.process_response = function (res) {
     if (res.options.page_type == "product_list") {
+        console.log('Revisando ' + res.options.store);
         process_product_list_response(res);
     } else {
         process_product_response(res);
