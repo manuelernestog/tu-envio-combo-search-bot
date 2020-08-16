@@ -39,7 +39,6 @@ function send_craw_request(page) {
     craw.queue({
         uri: page.base_url + page.url_end,
         page_type: page.page_type,
-        store_type: page.store_type,
         province: page.province,
         store: page.store,
         base_url: page.base_url,

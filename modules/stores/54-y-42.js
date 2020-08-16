@@ -2,7 +2,6 @@
 //     "base_url": "https://5tay42.enzona.net/",
 //     "url_end": "",
 //     "page_type": "product_list",
-//     "store_type": "5taY42",
 //     "store": "5ta y 42",
 //     "province": "habana"
 // }
@@ -97,7 +96,6 @@ function create_url_request(url, opt) {
     craw.queue({
         uri: url,
         page_type: "product",
-        store_type: opt.store_type,
         province: opt.province,
         store: opt.store,
         base_url: opt.base_url,
