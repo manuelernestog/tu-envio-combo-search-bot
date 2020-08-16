@@ -86,22 +86,17 @@ function get_product_info(res) {
         price: res.$('.product-price span').text(),
         store: res.options.store,
         img: res.options.img,
-        // Esto seria para usar la imagen con mas calidad
-        // img: res.$('.fancybox').attr('href'),
+        // img: res.$('.fancybox').attr('href'), // Esto seria para usar la imagen con mas calidad
         description: res.$('.product-info dd').text(),
         province: res.options.province,
         url: res.options.uri,
         products: []
     }
     res.$('.product-tab table.table tr').each(function (i, elem) {
-        const prod = {
-            count: $(this).find('td').last().text(),
-            name: $(this).find('td').first().text()
-        }
+        const prod = {count: $(this).find('td').last().text(), name: $(this).find('td').first().text()}
         product.products.push(prod);
     })
     product.products.splice(0, 1);
-
     return product;
 }
 

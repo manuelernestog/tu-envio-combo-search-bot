@@ -1,5 +1,5 @@
 const Crawler = require("crawler");
-var process_page_response = require("./process-page-response")
+const tu_envio = require('./stores/tu-envio');
 
 module.exports = new Crawler({
     maxConnections: 20,
@@ -11,11 +11,10 @@ module.exports = new Crawler({
     method: 'GET',
     callback: function (error, res, done) {
         if (error) {
-            console.log(error);
+            console.log('Error cargando la pagina' + res.options.uri);
         } else {
-            if (res.statusCode == 200 ) {
-                process_page_response(res);
-            }
+            if (res.statusCode == 200)
+                tu_envio.process_response(res);
         }
         done();
     }
