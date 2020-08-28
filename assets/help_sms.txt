@@ -2,11 +2,21 @@
 Es un robot  que localiza nuevos productos en las tiendas virtuales TuEnvio y los publica en canales de Telegram según su provincia.
 <b>👉 Porque se creo este robot ?</b>
 La tienda virtual TuEnvio no cuentan con un sistema para notificar la publicación de nuevos productos. El robot se encarga de este trabajo, notificando a todos los usuarios subscritos a los diferentes canales de difusión.
+<b>👉 Es gratis?</b>
+Si, este servicio no tiene ningun animo de lucro, solamente la intencion de simplificar el proceso de compra en TuEnvio :)
 <b>👉 Como funciona ?</b>
-El robot trabaja los 24x7 sin interrupciones variando su intensidad segun el horario, revisando todas las tiendas del país en busca de nuevos productos. Una vez encontrados los publica en el canal que le corresponda notificando a todos los usuarios subscritos.
+Ahora mismo el bot se ejecuta utilizando nuestros recursos personales por lo que no esta funcioanado a toda potencia.
+El bot trabaja de 8am a 5pm revisando las tiendas de la Habana en intervalos de tiempo variables segun el horario (Tenemos que ahorrar nuestros megas). Una vez encontrados los publica en el canal que le corresponda notificando a todos los usuarios subscritos.
+<b>👉 Como deberia funciona ?</b>
+El robot deberia funcionar 24x7 sin interrupciones variando su intensidad segun el horario, revisando todas las tiendas del país en busca de nuevos productos.
+<b>👉Por que no funciona a toda potencia?</b>
+El robot ya esta listo para funcionar a toda potencia pero necesita estar alojado en un equipo con acceso a internet las 24 horas.
 <b>👉 Porque un canal y no una aplicación?</b>
 La publicación en un canal facilita que la búsqueda en las tiendas se realice una sola vez efectuándose desde el servidor donde está alojado el robot, las aplicaciones con este fin impactan negativamente en la estabilidad de la tienda ya las búsquedas se realizan desde cada terminal, sobrecargando el sitio y haciéndolo inaccesible en ocasiones.
 <b>👉 Quien desarrolló el robot ?</b>
 El robot es desarrollado por el Proyecto Zuntek, conformado por ingenieros informáticos cubanos con el objetivo de contribuir con la informatización de la sociedad mediante el desarrollo de soluciones informáticas para la población.
----------------------------------------------------------------------------
-⚠️ Por le momento este servicio esta en desarrollo por lo que no esta disponible todo el dia y puede notar problemas en su funcionamiento. Lamentamos las molestias que esto pueda ocasionar.
+<b>👉Que se puede hacer para que funcione adecuadamente?</b>
+Estamos en plena disposicion de compartir esta aplicacion para lograr extender este servicio a todo el pais y mejorar su eficacia.
+Si tiene la posibilidad y dispocicion de alojar el servicio ponganse en contacto con nosotros.
+<b>👉Como puedo contactarlos?</b>
+Puede contactarnos mediantes nuestra pagina web https://zuntek.github.io o puede encontrarnos en Facebook como <b>Zuntek</b>
