@@ -12,20 +12,16 @@ module.exports.init_schedule = function () {
         file_module.remove_public_folder();
         file_module.crete_public_folder();
     });
-    cron2.schedule('0 8 */7 * *', () => {
-        bot_module.send_zuntek_info_to_all();
+    cron2.schedule('0 16 */3 * *', () => {
+        bot_module.send_zuntek_info_to_habana();
     });
-    cron1.schedule('* 7-16 * * *', () => {
+    cron1.schedule('* 8-11 * * *', () => {
+        console.log("Iniciando Revision " +new Date());
         review_habana_stores();
-        review_cuba_stores();
     });
-    cron1.schedule('*/5 17-23 * * *', () => {
+    cron1.schedule('*/2 12-16 * * *', () => {
+        console.log("Iniciando Revision " +new Date());
         review_habana_stores();
-        review_cuba_stores();
-    });
-    cron1.schedule('*/30 0-6 * * *', () => {
-        review_habana_stores();
-        review_cuba_stores();
     });
 };
 

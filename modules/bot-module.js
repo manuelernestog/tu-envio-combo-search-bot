@@ -38,7 +38,11 @@ module.exports = {
         const opt = {parse_mode: 'HTML', disable_web_page_preview: true};
         send_message_to_all(msg, opt);
     },
-
+    send_zuntek_info_to_habana: function () {
+        const msg = fs.readFileSync('./assets/zuntek_sms.txt', 'utf8');
+        const opt = {parse_mode: 'HTML', disable_web_page_preview: true};
+        bot.sendMessage("-1001486503580", msg, opt);
+    },
     help_message: function (msg) {
         const message = fs.readFileSync('./assets/help_sms.txt', 'utf8');
         bot.sendMessage(msg.chat.id, message, {parse_mode: 'HTML'});
