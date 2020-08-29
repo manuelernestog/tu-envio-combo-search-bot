@@ -15,15 +15,11 @@ module.exports.init_schedule = function () {
     cron2.schedule('0 16 */3 * *', () => {
         bot_module.send_zuntek_info_to_habana();
     });
-    cron1.schedule('* 8-11 * * *', () => {
+    cron1.schedule('* 8-10 * * *', () => {
         console.log("Iniciando Revision " +new Date());
         review_habana_stores();
     });
-    cron1.schedule('*/2 12-13 * * *', () => {
-        console.log("Iniciando Revision " +new Date());
-        review_habana_stores();
-    });
-    cron1.schedule('*/3 14-15 * * *', () => {
+    cron1.schedule('*/2 11-15 * * *', () => {
         console.log("Iniciando Revision " +new Date());
         review_habana_stores();
     });
