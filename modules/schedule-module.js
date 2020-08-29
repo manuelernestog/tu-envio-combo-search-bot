@@ -19,7 +19,11 @@ module.exports.init_schedule = function () {
         console.log("Iniciando Revision " +new Date());
         review_habana_stores();
     });
-    cron1.schedule('*/2 12-16 * * *', () => {
+    cron1.schedule('*/2 12-13 * * *', () => {
+        console.log("Iniciando Revision " +new Date());
+        review_habana_stores();
+    });
+    cron1.schedule('*/3 14-15 * * *', () => {
         console.log("Iniciando Revision " +new Date());
         review_habana_stores();
     });
