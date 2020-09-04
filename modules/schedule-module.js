@@ -8,13 +8,6 @@ const habanaStoreList = JSON.parse(Fs.readFileSync('./assets/store-list-habana.j
 const cubaStoreList = JSON.parse(Fs.readFileSync('./assets/store-list-cuba.json', 'utf8'));
 
 module.exports.init_schedule = function () {
-    cron1.schedule('0 7 * * *', () => {
-        file_module.remove_public_folder();
-        file_module.crete_public_folder();
-    });
-    cron2.schedule('0 16 */3 * *', () => {
-        bot_module.send_zuntek_info_to_habana();
-    });
     cron1.schedule('* 8-10 * * *', () => {
         console.log("Iniciando Revision " +new Date());
         review_habana_stores();
@@ -22,6 +15,13 @@ module.exports.init_schedule = function () {
     cron1.schedule('*/2 11-15 * * *', () => {
         console.log("Iniciando Revision " +new Date());
         review_habana_stores();
+    });
+    cron1.schedule('0 16 * * *', () => {
+        file_module.remove_public_folder();
+        file_module.crete_public_folder();
+    });
+    cron2.schedule('0 16 */3 * *', () => {
+        bot_module.send_zuntek_info_to_habana();
     });
 };
 

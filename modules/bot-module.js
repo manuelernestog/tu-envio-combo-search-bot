@@ -30,7 +30,7 @@ module.exports = {
     },
 
     get_provinces_btn: function (msg) {
-        bot.sendMessage(msg.chat.id, 'Lista de Canales de Alertas Automáticas', province_module.get_province_btn());
+        bot.sendMessage(msg.chat.id, 'Lista de Canales de Alertas Automáticas.', province_module.get_province_btn());
     },
 
     send_zuntek_info_to_all: function () {
