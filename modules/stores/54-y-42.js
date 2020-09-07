@@ -17,7 +17,6 @@ function craw_product_list_page(page, base_url) {
 
 function process_product_response(res) {
     if (product_is_available(res)) {
-            console.log('Publicando nuevo producto ' + res.options.uri);
             let product = get_product_info(res);
             let message = create_message(product, res);
             if (send_picture) {
@@ -34,7 +33,6 @@ function process_product_response(res) {
 }
 
 function product_is_available(res) {
-    console.log(res.$("#availability_value").text());
     const unavailability_message = 'Este producto ya no está disponible';
     return res.$("#availability_value").text() == unavailability_message ? false : true;
 }

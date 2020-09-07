@@ -20,7 +20,7 @@ module.exports.init_schedule = function () {
         file_module.remove_public_folder();
         file_module.crete_public_folder();
     });
-    cron2.schedule('0 16 */3 * *', () => {
+    cron2.schedule('0 16 */7 * *', () => {
         bot_module.send_zuntek_info_to_habana();
     });
 };

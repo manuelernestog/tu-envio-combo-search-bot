@@ -6,7 +6,6 @@ const send_picture = true;
 
 exports.process_response = function (res) {
     if (res.options.page_type == "product_list") {
-        console.log('Revisando ' + res.options.store);
         process_product_list_response(res);
     } else {
         process_product_response(res);
@@ -39,7 +38,7 @@ function craw_product_list_page(page, base_url) {
 function process_product_response(res) {
     if (product_is_available(res) && !invalid_product(res)) {
         if (valid_response(res)) {
-            console.log('Publicando nuevo producto ' + res.options.uri);
+            console.log('Nuevo producto ' + res.options.uri);
             let product = get_product_info(res);
             let message = create_message(product, res);
             if (send_picture && product.img != "https://imagenes.tuenvio.cu/Img_Data/215x215/") {
@@ -53,11 +52,11 @@ function process_product_response(res) {
                 bot_module.send_product_message(message, product);
             }
         } else {
-            console.log('Cargo mal el producto, solicitandolo again ' + res.options.uri);
+            console.log('Producto Invalido ' + res.options.uri);
             create_url_request(res.options.uri, res.options);
         }
     } else {
-        console.log('El Producto Ya no estaba disponible ' + res.options.uri);
+        console.log('Producto no disponible ' + res.options.uri);
     }
 }
 
