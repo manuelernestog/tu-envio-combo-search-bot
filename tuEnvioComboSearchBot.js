@@ -3,7 +3,7 @@ process.env["NTBA_FIX_350"] = 1;
 const TelegramBot = require('node-telegram-bot-api');
 const bot_module = require('./modules/bot-module');
 const file_module = require('./modules/file-module');
-const botKey = "1299051161:AAH1Lut4GeEd4HvAbRwRC87bwltM31Rt_y0";
+const botKey = process.env.BOT_TOKEN;
 const schedule_module = require('./modules/schedule-module');
 
 global.bot = new TelegramBot(botKey, {polling: true});
